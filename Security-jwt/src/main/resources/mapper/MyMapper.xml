@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetablesale.securityjwt.dao.MyMapper">
+    <select id="queryByUsername" parameterType="java.lang.String" resultType="com.vegetablesale.securityjwt.pojo.MyUser">
+        select * from user where username = #{username}
+    </select>
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.vegetablesale.securityjwt.pojo.MyUser">
+        select * from user where username = #{username}
+    </select>
+    <insert id="register" parameterType="com.vegetablesale.securityjwt.pojo.MyUser">
+        insert into user
+    </insert>
+</mapper>

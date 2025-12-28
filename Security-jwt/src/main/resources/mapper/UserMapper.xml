@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vegetablesale.securityjwt.dao.UserMapper">
+    <insert id="register" parameterType="com.vegetablesale.securityjwt.pojo.MyUser">
+        insert into user(username,password,role,locked,enable)
+        values
+        (#{username},#{password},"user",0,0)
+    </insert>
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.vegetablesale.securityjwt.pojo.MyUser">
+        select * from user where username = #{username}
+    </select>
+    <update id="updatePW" parameterType="com.vegetablesale.securityjwt.pojo.MyUser">
+        update user set password = #{password} where username = #{username}
+    </update>
+</mapper>
